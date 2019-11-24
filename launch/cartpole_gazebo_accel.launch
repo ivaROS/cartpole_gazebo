@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="world_file"  default="/opt/ros/kinetic/share/gazebo_ros/launch/empty_world.launch"/>
+  <arg name="world_file"  default="/opt/ros/kinetic/share/turtlebot_gazebo/worlds/empty.world"/>
   <arg name="paused" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="verbose" default="true"/>
@@ -8,16 +8,14 @@
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(arg world_file)"/>
-    <arg name="gui" value="$(arg gui)"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="debug" value="false"/>
-    <arg name="physics" value="ode"/>
-    <arg name="verbose" default="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="world_name" value="$(arg world_file)"/>
   </include>
 
   <!-- send robot urdf to param server -->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find cartpole_gazebo)/urdf/carpole_gazebo_accel.rdf.xacro.urdf" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find cartpole_gazebo)/urdf/cartpole_gazebo_accel.xacro.urdf" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
