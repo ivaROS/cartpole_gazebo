@@ -20,4 +20,4 @@ In Ubuntu 18.04LTS, or ROS ``melodic`` and above, there is no longer a Turtlebot
 ```
 sudo apt-get install ros-melodic-turtlebot3-gazebo
 ```
-with ``melodic`` changed to whatever version you have beyond ``kinetic`` if it differs.  The launch file will also have to be modified to snag from that world.
+with ``melodic`` changed to whatever version you have beyond ``kinetic`` if it differs.  The launch file will also have to be modified to snag from that world. The launch file default is to load ``/opt/ros/kinetic/share/turtlebot_gazebo/worlds/empty.world``. Changing to ``turtlebot3_gazebo`` should do the trick, or overriding through command-line flag specification will also work (the variable should be ``world_file`` I think).
