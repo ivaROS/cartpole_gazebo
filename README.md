@@ -18,4 +18,5 @@ sudo apt-get install ros-kinetic-turtlebot-gazebo
 
 In Ubuntu 18.04LTS, or ROS ``melodic`` and above, there is no longer a Turtlebot package.  It will have to be replaced with the equivalent Turtlebot 3 empty world.  I suspect, but haven't tested, that the proper package would be:
 > sudo apt-get install ros-melodic-turtlebot3-gazebo
+
 with ``melodic`` changed to whatever version you have beyond ``kinetic`` if it differs.  The launch file will also have to be modified to snag from that world.
