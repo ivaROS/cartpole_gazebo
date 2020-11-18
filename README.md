@@ -10,7 +10,7 @@ Eventually, several different control algorithms will be tested out.
 
 It requires the ROS install base to have the necessary controllers, plus it uses the Turtlebot empty world so that package or an equivalent will be needed.
 
-In Ubuntu 16.04LTS, the following should work
+In Ubuntu 16.04LTS, the following should work (and might be overkill)
 ```
 sudo apt-get install ros-kinetic-effort-controllers ros-kinetic-position-controllers ros-kinetic-joint-state-*
 sudo apt-get install ros-kinetic-turtlebot-gazebo
